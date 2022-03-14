@@ -16,6 +16,7 @@ class App:
         self.user_quit = False
 
         # Setup window
+        self.width = float(width)
         pygame.display.set_mode((width, width)).fill(pygame.Color('white'))
         pygame.display.set_caption('ROS-Mouse')
         self.clock = pygame.time.Clock()
@@ -56,7 +57,7 @@ class App:
     def publish_mouse_joy(self, pos, rel, pressed):
         msg = Joy()
         msg.header.stamp = rospy.Time.now()
-        msg.axes = list(pos)
+        msg.axes = list(pos) + list(rel) + [float(pos[0])/self.width, float(pos[1])/self.width, float(rel[0])/self.width, float(rel[1])/self.width]
         msg.buttons = pressed
         self.node.pubs['joy'].publish(msg)
 

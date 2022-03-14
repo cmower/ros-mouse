@@ -1,6 +1,6 @@
 # ros-mouse
 
-This package allows you to recieve mouse events, similar to how the joy node and keyboard packages work (and has been partially modelled on the [ros-keyboard](http://wiki.ros.org/keyboard) package.
+This package allows you to recieve mouse events, similar to how the joy node and keyboard packages work (and has been partially modelled on the [ros-keyboard](http://wiki.ros.org/keyboard) package).
 
 Since it uses [Pygame](https://www.pygame.org/) to capture mouse events, a separate window will be opened when the node starts, and this is where all mouse input will be recieved. In other words, the node will recieve mouse events only when this window is focused.
 

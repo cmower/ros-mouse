@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="mouse" name="mouse" type="mouse"/>
+</launch>
